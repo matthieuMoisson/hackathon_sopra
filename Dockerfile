@@ -11,14 +11,14 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt-get -qq update \
     && DEBIAN_FRONTEND=noninteractive apt-get -qq install -y nodejs yarn \
-    && yarn global add firebase-tools \
+    && yarn global add firebase-tools gh-pages\
     && rm -rf /var/lib/apt/lists/*
 
 # Hugo
-ENV HUGO_VERSION 0.53
+ENV HUGO_VERSION 0.55.0
 ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_Linux-64bit.deb
 RUN curl -sL -o /tmp/hugo.deb \
-    https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} && \
+    https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} && \
     dpkg -i /tmp/hugo.deb && \
     rm /tmp/hugo.deb && \
     mkdir /site
