@@ -15,7 +15,7 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
     && rm -rf /var/lib/apt/lists/*
 
 # Hugo
-ENV HUGO_VERSION 0.55.2
+ENV HUGO_VERSION 0.55.3
 ENV HUGO_BINARY hugo_extended_${HUGO_VERSION}_Linux-64bit.deb
 RUN curl -sL -o /tmp/hugo.deb \
     https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} && \
